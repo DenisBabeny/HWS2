@@ -3,6 +3,7 @@ import Greeting from './Greeting'
 import { UserType } from './HW3'
 
 
+
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any
     addUserCallback: (name:string) => void// need to fix any
@@ -12,7 +13,7 @@ export const pureAddUser = (name: string, setError: (error:string) => void, setN
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
     const trimmedTitle = name.trim()
     if(trimmedTitle){
-        addUserCallback(name)
+        addUserCallback(trimmedTitle)
         setName('')
     } else {
         setError('Ошибка! Введите имя!')
@@ -44,7 +45,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     const [error, setError] = useState<string>('') // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
-        if(error) setError(error)
+        if(error) setError('')
         setName(e.currentTarget.value) // need to fix
 
     }
@@ -61,7 +62,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
 
     const totalUsers = users.length // need to fix
-    const lastUserName = name // need to fix
+    const lastUserName = users.length > 0 ? users[totalUsers-1].name : ''// need to fix
 
     return (
         <Greeting

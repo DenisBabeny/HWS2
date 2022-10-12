@@ -1,24 +1,38 @@
 .sidebar {
+    display: flex;
+    width: 500px;
+    transition-duration: 500ms;
+    transform: translate(-270px);
 }
 
 .sidebar.open {
+    transition-duration: 500ms;
+    transform: translate(0);
 }
 
 .background {
 }
 
 .nav {
+    display: flex;
+    flex-direction: column;
 }
 
 .nav a {
+    text-decoration: none;
+    color: hotpink;
+    margin: 10px;
 }
 
 .nav a:hover {
+    color: #d3cedb;
 }
 
 .nav a.active {
+    color: blueviolet;
 }
 .close {
+
 }
 
 .close img {
