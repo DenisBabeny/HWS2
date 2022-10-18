@@ -1,21 +1,27 @@
 .sidebar {
     display: flex;
-    width: 500px;
+    visibility: hidden;
     transition-duration: 500ms;
     transform: translate(-270px);
 }
 
 .sidebar.open {
+    visibility: visible;
     transition-duration: 500ms;
     transform: translate(0);
 }
 
 .background {
+    /*display: flex;*/
+    /*width: 100%;*/
+    /*background-color: blanchedalmond;*/
 }
 
 .nav {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*width: 100%;*/
+
 }
 
 .nav a {
@@ -29,11 +35,17 @@
 }
 
 .nav a.active {
+    visibility: visible;
     color: blueviolet;
 }
 .close {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   width: 50px;
+    height: 20px;
 }
 
 .close img {
+    size: 10px;
 }
